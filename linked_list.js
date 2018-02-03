@@ -17,12 +17,12 @@ ExampleLinkedList.prototype.add = function(value) {
     }
     traversingNode.next = node;
   }
-}
+};
 
 ExampleLinkedList.prototype.remove = function(value) {
   let traversingNode = this.head;
   if (!traversingNode) {
-    console.log('List is empty.');
+    console.log("List is empty.");
   } else {
     if (traversingNode.value === value) {
       this.head = traversingNode.next;
@@ -31,11 +31,13 @@ ExampleLinkedList.prototype.remove = function(value) {
       while (!found) {
         if (traversingNode.value === value) {
           found = true;
-          traversingNode.next = traversingNode.next.next ? traversingNode.next.next : null;
+          traversingNode.next = traversingNode.next.next
+            ? traversingNode.next.next
+            : null;
         } else {
           traversingNode = traversingNode.next;
         }
       }
     }
   }
-}
+};
