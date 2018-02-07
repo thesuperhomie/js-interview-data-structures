@@ -1,7 +1,6 @@
 /*
  * Possible Questions:
  * Design an algorithm to find a path from one node in a binary tree to another.
- * Given a binary tree, check whether it’s a binary search tree or not.
  * Find the minimum depth of binary search tree
  * Given a binary search tree and a value k, please find a node in the binary search tree whose value is closest to k.
  */
@@ -15,6 +14,55 @@ function TreeNode(value) {
   this.left = null;
   this.right = null;
 }
+
+BinarySearchTree.prototype.isBinarySearchTree = function(root) {
+  if (!root) {
+    return false;
+  }
+
+  const currentNode = root;
+  if (!currentNode.left || !currentNode.right) {
+    return false;
+  }
+
+  const rootValue = root.value;
+
+  let leftNodeTraversing = root.left;
+  let rightNodeTraversing = root.right;
+  let isValid = true;
+
+  while (leftNodeTraversing) {
+    if (
+      (leftNodeTraversing && leftNodeTraversing.value > rootValue) ||
+      (leftNodeTraversing.left &&
+        leftNodeTraversing.left.value > leftNodeTraversing.value)
+    ) {
+      isValid = false;
+      break;
+    } else {
+      leftNodeTraversing = leftNodeTraversing.left
+        ? leftNodeTraversing.left
+        : null;
+    }
+  }
+
+  while (rightNodeTraversing) {
+    if (
+      (rightNodeTraversing && rightNodeTraversing.value < rootValue) ||
+      (rightNodeTraversing.right &&
+        rightNodeTraversing.right.value < rightNodeTraversing.value)
+    ) {
+      isValid = false;
+      break;
+    } else {
+      rightNodeTraversing = rightNodeTraversing.right
+        ? rightNodeTraversing.right
+        : null;
+    }
+  }
+
+  return isValid;
+};
 
 BinarySearchTree.prototype.minDepth = function() {
   const minDepth = function(node) {
