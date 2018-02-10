@@ -1,15 +1,20 @@
-# js-interview-data-structures
+# js-interview-material
 
-JS Interview Data Structures aims to provide Front End Developers some insight on how one might approach creating traditional OOP data structures in JavaScript. These references are particularly useful for interviews that test front end developers heavily in algorithms and data structures.
+JS Interview Material aims to provide Front End Developers some insight on how one might approach creating traditional OOP data structures in JavaScript as well as common algorithm questions asked in interviews. These references are particularly useful for interviews that test front end developers heavily in algorithms and data structures.
 
 Currently this repository features:
 
-1. Binary Search Tree
-2. Linked List
-3. Queue
-4. Set
-5. Stack
-6. Trie
+1. Data Structures
+* Binary Search Tree
+* Linked List
+* Queue
+* Set
+* Stack
+* Trie
+2. Sorting Algorithms
+* Binary Search
+* Merge Sort
+3. Misc Interview Questions
 
 Best of luck in those interviews!
 
