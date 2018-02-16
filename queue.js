@@ -5,7 +5,6 @@ function ExampleQueue() {
 }
 
 ExampleQueue.prototype.enqueue = function(element) {
-  console.log("inside with element::;", element);
   if (element) {
     this.data[this.count] = element;
     this.count++;
@@ -24,3 +23,9 @@ ExampleQueue.prototype.dequeue = function() {
 ExampleQueue.prototype.size = function() {
   return this.count - this.dequeueCount;
 };
+
+ExampleQueue.prototype.isEmpty = function() {
+  return this.count === 0;
+};
+
+export default ExampleQueue;

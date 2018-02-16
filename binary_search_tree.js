@@ -15,6 +15,20 @@ function TreeNode(value) {
   this.right = null;
 }
 
+BinarySearchTree.prototype.levelTraversal = function(root) {
+  let queue = [];
+  queue.push(root);
+  while (queue.length !== 0) {
+    const node = queue.shift();
+    if (node.left) {
+      queue.push(node.left);
+    }
+    if (node.right) {
+      queue.push(node.right);
+    }
+  }
+};
+
 BinarySearchTree.prototype.isBinarySearchTree = function(root) {
   if (!root) {
     return false;
