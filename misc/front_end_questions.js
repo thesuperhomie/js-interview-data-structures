@@ -20,6 +20,31 @@ function get_elements_by_class_name(className) {
   return elementsWithClassName;
 }
 
+// Implement the functionality of getElementById
+function get_element_by_id(node, id) {
+  var element = null;
+  for (var i = 0; i < node.childElementCount; i++) {
+    if (node.children[i].id === id) {
+      element = node.children[i];
+      break;
+    }
+    get_element_by_id(node.children[i], id);
+  }
+  return element;
+}
+
+// Implement the functionality of getElementsByTagName
+function get_elements_by_tag_name(node, tagName) {
+  var elements = [];
+  for (var i = 0; i < node.childElementCount; i++) {
+    if (node.children[i].tagName === tagName) {
+      element.push(node.children[i]);
+    }
+    get_elements_by_tag_name(node.children[i], tagName);
+  }
+  return elements;
+}
+
 // How do you make a function that takes f and returns a function that calls f on a timeout
 // How do you make a function that only calls input function f every 50 milliseconds - just use setInterval
 function call_function_on_timeout(method) {

@@ -6,6 +6,7 @@ Currently this repository features:
 
 1. Data Structures
 * Binary Search Tree
+* Graph
 * Linked List
 * Queue
 * Set

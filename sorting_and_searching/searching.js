@@ -19,5 +19,5 @@ const binary_search = (array, target) => {
     return false;
   };
 
-  return search;
+  return search(array, start, end, target);
 };
